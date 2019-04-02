@@ -1,6 +1,7 @@
 package BlockingQueueExample;
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Consumer implements Runnable {
             for (int i = 0; i < noOfIterations; i++) {
                 Integer element = queue.take();
                 System.out.println("\tConsume: " + element);
-                Thread.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             System.out.println("Consumer terminates");

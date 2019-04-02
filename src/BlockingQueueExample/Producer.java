@@ -1,6 +1,7 @@
 package BlockingQueueExample;
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class Producer implements Runnable {
     BlockingQueue<Integer> queue;
@@ -15,8 +16,8 @@ public class Producer implements Runnable {
         try {
             while (true) {
                 queue.put(++i);
-                System.out.println("Produce:" + i);                
-                Thread.sleep(500);
+                System.out.println("Produce:" + i); 
+                TimeUnit.MILLISECONDS.sleep(500);
             }
         } catch (InterruptedException e) {
             System.out.println("Producer terminates");

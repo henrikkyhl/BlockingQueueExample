@@ -16,6 +16,10 @@ public class ProducerConsumerWithBlockingQueue {
     public static void main(String[] args) {
         BlockingQueue<Integer> queue = new LinkedBlockingQueue<>(4);
         
+        // There are other implementations of the BlockingQueue interface.
+        // For example:
+        //BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(4);        
+        
         Runnable p = new Producer(queue);
         Runnable c = new Consumer(queue, 10);
         
